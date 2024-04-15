@@ -32,7 +32,7 @@
 			</div>
 			<div class="clearfix"></div>
 			<div class="wthree_footer_copy">
-				<p>© <?=date('Y')?> Grocery Store. All rights reserved | Design by <a href="http://w3layouts.com/">Himani</a></p>
+				<p>© <?=date('Y')?> Grocery Store. All rights reserved | Design by claudius & Lewis</p>
 			</div>
 		</div>
 </div>
