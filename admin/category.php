@@ -88,15 +88,37 @@ $total_category = $result->num_rows;
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php
-                                        if ($total_category) {
-                                            while ($row = $result->fetch_assoc()) {
-                                                $result1 = $conn->query("SELECT `name` FROM `category` WHERE `cid` = $row[parent_id]");
-                                                $category = $result1->fetch_assoc(); ?>
-                                        <tr>
-                                            <td><?=$row['cid']?></td>
-                                            <td><?=$row['name']?></td>
-                                            <td><?=$category['name']?></td>
+                                    <?php
+                                    if ($total_category) {
+                                        while ($row = $result->fetch_assoc()) {
+                                            // Ensure the query is properly quoted and escaped to prevent SQL injection
+                                            // and syntax errors, especially if parent_id is dynamically generated.
+                                            $parent_id = $conn->real_escape_string($row['parent_id']);
+                                            $query = "SELECT `name` FROM `category` WHERE `cid` = '{$parent_id}'";
+                                            $result1 = $conn->query($query);
+
+                                            // Initialize $categoryName to a default value (e.g., "No Category")
+                                            // in case the query returns null or fails.
+                                            $categoryName = "No Category";
+
+                                            if ($result1) {
+                                                $category = $result1->fetch_assoc();
+                                                if ($category) {
+                                                    $categoryName = $category['name'];
+                                                } else {
+                                                    // Optionally handle the case where no matching category is found
+                                                    // This is where you might log an error or take corrective action
+                                                }
+                                            } else {
+                                                // Error handling: log or output the error
+                                                error_log("SQL Error: " . $conn->error . " in query " . $query);
+                                                // Optionally output an error message or take other corrective action
+                                            }
+                                            ?>
+                                            <tr>
+                                                <td><?=htmlspecialchars($row['cid'], ENT_QUOTES, 'UTF-8')?></td>
+                                                <td><?=htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8')?></td>
+                                                <td><?=htmlspecialchars($categoryName, ENT_QUOTES, 'UTF-8')?></td>
                                             <td class="text-nowrap">
                                                 <a href="category-edit.php?id=<?=$row['cid']?>" class="btn btn-outline-info">
                                                 	<i class="fa fa-close text-info"></i> Edit

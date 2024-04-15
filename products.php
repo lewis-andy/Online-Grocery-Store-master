@@ -1,15 +1,30 @@
 <?php
 require 'dbcon.php';
-$category = isset($_GET['id']) ? (int) $_GET['id'] : 0;
+$category = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+$title = 'All products';
+
 if ($category) {
-    $result = mysqli_query($conn, "SELECT * FROM `category` WHERE `cid` = $category");
-    $row = $result->fetch_assoc();
-    $category_name = $row['name'];
-    $title = ucwords($category_name).' products';
-    $result = mysqli_query($conn, "SELECT * FROM `product` WHERE `cid` = $category");
+    if ($stmt = $conn->prepare("SELECT `name` FROM `category` WHERE `cid` = ?")) {
+        $stmt->bind_param("i", $category);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($row = $result->fetch_assoc()) {
+            $category_name = $row['name'];
+            $title = ucwords($category_name) . ' products';
+        }
+        $stmt->close();
+    }
+    $query = "SELECT * FROM `product` WHERE `cid` = ?";
 } else {
-    $title = 'All products';
-    $result = mysqli_query($conn, 'SELECT * FROM `product` LIMIT 20');
+    $query = "SELECT * FROM `product` LIMIT 20";
+}
+
+if ($stmt = $conn->prepare($query)) {
+    if ($category) {
+        $stmt->bind_param("i", $category);
+    }
+    $stmt->execute();
+    $result = $stmt->get_result();
 }
 ?>
 <!--
@@ -108,6 +123,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
     <div class="clearfix"></div>
 </div>
+    <?php
+    // Debug: Output the category ID to verify it's as expected.
+    echo "Category ID: $category";
+
+    // After preparing and executing your SQL query...
+    if ($result) {
+        echo "Number of products found: " . $result->num_rows;
+        if ($result->num_rows == 0) {
+            echo "No products found for category ID: $category";
+        }
+    } else {
+        echo "Error executing query: " . $conn->error;
+    }
+    ?>
 <?php include 'footer.php'?>
 </body>
 </html>

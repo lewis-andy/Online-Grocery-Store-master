@@ -22,9 +22,11 @@ if (isset($_POST['submit'])) {
     $g = $_POST['Gn'];
     $u = $_POST['Username'];
     $p = $_POST['Password'];
+    // Hash the password
+    $hashed_password = password_hash($p, PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO user(name, mobile, address1, gender, username, password) 
-    VALUES ('$n', '$m' ,'$a1','$g','$u','$p')";
+    VALUES ('$n', '$m' ,'$a1','$g','$u','$hashed_password')";
 
     if ($conn->query($sql)) {
         header('Location:login.php');
@@ -95,15 +97,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <span class="text-danger"><?=$msg?></span>
                         <form action="" method="post">
                             <input type="text" name="Name" placeholder="name" required title="must be enter name">
-                            <input type="password" name="Mobile" placeholder="Mobile No" required pattern="[0-9]{10}" title="must be 10 charecter">
+                            <input type="text" name="Mobile" placeholder="Mobile No" required pattern="[0-9]{10}" title="must be 10 charecter">
                             <input type="text" name="Address" placeholder=" Address" required>
 
-                            <input type="text" name="City" placeholder="City" required value="Visnager" readonly style="text-align:center:">
+                            <input type="text" name="City" placeholder="City"   style="text-align:center:">
                             <input type="radio" name="Gn" placeholder="" required>Male
                             <input type="radio" name="Gn" placeholder="" required>Female
 
                             <input type="text" name="Username" placeholder="Username" required>
-                            <input type="password" name="Password" placeholder="Password" required pattern="[a-z0-9]{6}" title="password must be 8 charecter">
+                            <input type="password" name="Password" placeholder="Password" required pattern=".{8,}" title="Password must be at least 8 characters long">
+
                             <input type="submit" value="Register" name="submit">
                         </form>
                     </div>
