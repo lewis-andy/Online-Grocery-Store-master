@@ -90,7 +90,7 @@ if (isset($_POST['login'])) {
                         <input type="submit" value="Login" name="login">
                     </form>
                     <div class="cta" style="margin-top: 18px">
-                        <a href="forgot_password.php">Forgot your password?</a> <!-- Added forgot password link -->
+                        <a href="daraja/forgot_password.php">Forgot your password?</a> <!-- Added forgot password link -->
                     </div>
                 </div>
 

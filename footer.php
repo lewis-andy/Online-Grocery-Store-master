@@ -25,8 +25,8 @@
                         <li><a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i> </a></li>
 				    </ul>
                     <ul class="phone_email">
-                        <li><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919979331605">(+91) 9979331605</a></li>
-                        <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:store@grocery.com">store@grocery.com</a></li>
+                        <li><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+254740024089">+254740024089</a></li>
+                        <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="lewinskysystems@gmail.com">lewinskysystems@gmail.com</a></li>
 				    </ul>
 				</ul>
 			</div>
@@ -137,3 +137,5 @@
 
         </script>
 
+</body>
+    </

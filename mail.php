@@ -1,9 +1,4 @@
-<!--
-author: W3layouts
-author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,15 +31,15 @@ if (isset($_POST['Name']) && isset($_POST['Mobile']) && isset($_POST['msg'])) {
 				<div class="col-md-4 agileinfo_mail_grid_left">
 					<ul>
 						<li><i class="fa fa-home" aria-hidden="true"></i></li>
-						<li>address<span>Asoda</span></li>
+						<li>address<span>Nairobi-kenya</span></li>
 					</ul>
 					<ul>
 						<li><i class="fa fa-envelope" aria-hidden="true"></i></li>
-						<li>email<span><a href="mailto:info@example.com">himaniaasoda1999@gmail.com</a></span></li>
+						<li>email<span><a href="mailto:lewinskysystems@gmail.com">lewinskysystems@gmail.com</a></span></li>
 					</ul>
 					<ul>
 						<li><i class="fa fa-phone" aria-hidden="true"></i></li>
-						<li>call to us<span>(+91) 9979331605</span></li>
+						<li>call to us<span>+254740024089</span></li>
 					</ul>
 				</div>
 				<div class="col-md-8 agileinfo_mail_grid_right">

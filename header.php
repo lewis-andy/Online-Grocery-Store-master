@@ -120,8 +120,8 @@
         </div>
         <div class="w3ls_logo_products_left1">
           <ul class="phone_email">
-            <li><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+919979331605">(+91) 9979331605</a></li>
-            <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:store@grocery.com"> <a href="mailto:store@grocery.com">store@grocery.com</a></li>
+            <li><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+254740024089">+254740024089</a></li>
+            <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:lewinskysystems@gmail.com"> <a href="mailto:lewinskysystems@gmail.com">lewinskysystems@gmail.com</a></li>
           </ul>
         </div>
         <div class="clearfix"></div>
@@ -176,7 +176,7 @@
                       }
                   }
                   ?>
-<!--
+
                 <li><a href="household.php">Home Care</a></li>
                 <li><a href="vegetables.php">Vegetables</a></li>
                 <li><a href="shampoo.php">Personal Care</a></li>
@@ -196,20 +196,20 @@
                     </div>
                   </div>
                 </li>
--->
 
-                <!--<li class="dropdown mega-dropdown active">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Veggies & Fruits<span class="caret"></span></a>				
+
+                <li class="dropdown mega-dropdown active">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Veggies & Fruits<span class="caret"></span></a>
                                     <div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
                                         <div class="w3ls_vegetables">
-                                            <ul>	
+                                            <ul>
                                                 <li><a href="vegetables.php">Vegetables</a></li>
                                                 <li><a href="vegetables.php">Fruits</a></li>
                                             </ul>
-                                        </div>                  
-                                    </div>				
-                                </li> !-->
-                <!--<li class="dropdown">
+                                        </div>
+                                    </div>
+                                </li>
+                <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Persnal Care<span class="caret"></span></a>
                                     <div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
                                         <div class="w3ls_vegetables">
@@ -217,9 +217,9 @@
                                                 <li><a href="shampoo.php">Shampoo</a></li>
                                                 <li><a href="soap.php">Soap</a></li>
                                             </ul>
-                                        </div>                  
-                                    </div>	
-                                </li>!-->
+                                        </div>
+                                    </div>
+                                </li>
 
               </ul>
             </div>

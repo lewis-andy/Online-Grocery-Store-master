@@ -50,7 +50,7 @@ require 'header.php';
 										<div class="snipcart-thumb">
 											<a href="#"><img src="<?php echo $row['pic']; ?>" alt=" " class="img-responsive" height="140px" width="140px" /></a>
 											<p><?php echo $row['name'].$row['weight']; ?></p>
-											<h4><i class="fa fa-rupee"> <?php echo $row['price']; ?> </i><span><i class="fa fa-rupee"><del> <?php echo $row['discount']; ?></del> </i></h4>
+                                            <h4><i class=""></i> Ksh <?php echo $row['price']; ?><i class=""></i> Ksh <del><?php echo $row['discount']; ?></del></span></h4>
 										</div>
 										<div class="snipcart-details">
 											<form action="#" method="post">
