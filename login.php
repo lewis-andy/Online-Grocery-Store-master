@@ -1,5 +1,15 @@
 <?php
 include 'dbcon.php';
+include 'developer/config.php';
+
+// Check if login is enabled
+if (!isLoginEnabled()) {
+    // Redirect to an error page or display a message
+    header('Location: developer/login_disabled.php');
+    exit();
+}
+
+
 session_start();
 if (isset($_GET['page']) && !empty($_GET['page'])) {
     $page = $_GET['page'].'.php';
